@@ -1,3 +1,3 @@
 export const config = {
-    apiUrl: "http://192.168.0.175:3000",
+    apiUrl: "http://bellevue-project.ddns.net:1206",
 };
