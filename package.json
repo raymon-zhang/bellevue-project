@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev:server": "nodemon ./server/index.js ",
-        "dev:client": "npx vite ./client",
+        "dev:client": "npx vite ./client --host",
         "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
     },
     "author": "",
@@ -19,9 +19,5 @@
         "watch": [
             "server/*"
         ]
-    },
-    "dependencies": {
-        "cannon-es": "^0.20.0",
-        "cors": "^2.8.5"
     }
 }

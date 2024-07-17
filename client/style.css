@@ -143,6 +143,8 @@ body {
     background-color: white;
     padding: 2rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .topContainer {
@@ -156,8 +158,6 @@ body {
 
 .innerContainer {
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
 .closeButton {

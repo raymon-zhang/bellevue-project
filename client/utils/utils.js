@@ -8,6 +8,7 @@ import {
     SAH,
     StaticGeometryGenerator,
 } from "three-mesh-bvh";
+import { config } from "../config.js";
 
 const textureLoader = new THREE.TextureLoader();
 let sideMeshMap = {};
@@ -175,7 +176,7 @@ export const createTerrain = async (
     // scene.add(ground);
 
     // LOAD BUILDINGS
-    const result = await fetch("http://localhost:3000/cache?").then((data) =>
+    const result = await fetch(`${config.apiUrl}/cache?`).then((data) =>
         data.json()
     );
 
@@ -334,9 +335,10 @@ export const createTerrain = async (
                 if (building.panels[i - 1]) {
                     sideMaterial = new THREE.MeshPhongMaterial({
                         map: textureLoader.load(
-                            `http://localhost:3000/panels/${building.id}_${
-                                i - 1
-                            }`
+                            // `${config.apiUrl}/panels/${building.id}_${i - 1}`
+                            `https://firebasestorage.googleapis.com/v0/b/bellevue-9b030.appspot.com/o/panels%2F${
+                                building.id
+                            }_${i - 1}?alt=media`
                         ),
                         side: THREE.DoubleSide,
                     });
@@ -419,7 +421,9 @@ const finishLoading = () => {
 
 export const loadPanelImage = async (panelId) => {
     sideMeshMap[panelId].material = new THREE.MeshPhongMaterial({
-        map: textureLoader.load(`http://localhost:3000/panels/${panelId}`),
+        map: textureLoader.load(
+            `https://firebasestorage.googleapis.com/v0/b/bellevue-9b030.appspot.com/o/panels%2F${panelId}?alt=media`
+        ),
         side: THREE.DoubleSide,
     });
 };

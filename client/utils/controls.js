@@ -21,6 +21,16 @@ export function updatePlayer(
     collider,
     params
 ) {
+    if (
+        playerIsOnGround &&
+        !fwdPressed &&
+        !bkdPressed &&
+        !lftPressed &&
+        !rgtPressed
+    ) {
+        return;
+    }
+
     if (playerIsOnGround) {
         playerVelocity.y = delta * params.gravity;
     } else {
@@ -134,7 +144,6 @@ export function updatePlayer(
     if (player.position.y < -25) {
         resetPlayer(player, camera, controls);
     }
-    console.log(player.position);
     if (player.position.z > -12.227) player.position.z = -12.227;
     if (player.position.x > 112.9) player.position.x = 112.9;
 }
