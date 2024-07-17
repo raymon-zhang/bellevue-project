@@ -4,7 +4,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 
 const app = initializeApp({
-    credential: cert("./server/admin-key.json"),
+    credential: cert(JSON.parse(process.env.FIREBASE_KEY)),
     storageBucket: "bellevue-9b030.appspot.com",
 });
 

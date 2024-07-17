@@ -4,3 +4,4 @@ client/node_modules
 /cache/*
 /panels/*
 admin-key.json
+.env

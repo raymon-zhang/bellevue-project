@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev:server": "nodemon ./server/index.js ",
+        "dev:server": "nodemon --env-file=.env ./server/index.js",
         "dev:client": "npx vite ./client --host",
         "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
     },
