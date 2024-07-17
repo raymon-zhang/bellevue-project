@@ -4,7 +4,7 @@ import cache from "./cache/index.js";
 import compression from "compression";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(compression());
 app.use(cors());
