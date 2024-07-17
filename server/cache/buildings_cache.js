@@ -9,7 +9,7 @@ export default class BuildingCache {
     static defaultHeight = 30;
     static heightRandomness = 10;
     static bitmaskOffset = 32;
-    static chunks = [2363, 2364];
+    static chunks = [2363];
 
     constructor(filePath) {
         this.filePath = filePath || "./cache/buildings.mpk";
