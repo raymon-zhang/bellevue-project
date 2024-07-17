@@ -1,10 +1,12 @@
 import express from "express";
 import cors from "cors";
 import cache from "./cache/index.js";
+import compression from "compression";
 
 const app = express();
 const port = 3000;
 
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 
