@@ -53,12 +53,12 @@ export function pickCallback(panelId) {
             data.append("panel", fileInput.files[0]);
             data.append("panelId", panelId);
             data.append("idToken", await auth.currentUser.getIdToken(true));
+            container.remove();
             const res = await fetch(`${config.apiUrl}/cache/uploadPanel`, {
                 method: "POST",
                 body: data,
             });
             console.log(res);
-            container.remove();
             loadPanelImage(panelId);
         };
         submitButton.classList.add("submitButton");

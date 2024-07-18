@@ -318,12 +318,12 @@ export const createTerrain = async (
 
                 // prettier-ignore
                 const uvs = [
-                    0, 0, 
                     1, 0, 
-                    1, 1, 
-                    1, 1, 
+                    0, 0, 
                     0, 1, 
-                    0, 0
+                    0, 1, 
+                    1, 1, 
+                    1, 0
                 ];
                 sideGeometry.setAttribute(
                     "uv",
