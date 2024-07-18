@@ -1,3 +1,3 @@
 export const config = {
-    apiUrl: "http://bellevue-project.ddns.net:1206",
+    apiUrl: "https://api-bellevue-project.evergreenartconnections.org",
 };
