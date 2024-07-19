@@ -80,6 +80,7 @@ function init() {
 
     //setup player
     controls = new OrbitControls(camera, renderer.domElement);
+    controls.rotateSpeed *= -0.5;
 
     player = new THREE.Mesh(
         new RoundedBoxGeometry(0.5, 1.0, 0.5, 10, 0.25),
